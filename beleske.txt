@@ -1,0 +1,6 @@
+- kada se aplikacija pokrene sa https://dummyjson.com/products dovuce listu proizvoda
+- iz te liste za svaki proizvod uzme samo neke podatke koji su vazni i njih sacuva uvuex store
+- te vazne podatke prikaze u tabeli
+- kada se klikne na red u tabeli prikazuje se dijalog sa dodatnim detaljima o proizvodu
+- iz dijaloga moze da se ode na stranu za taj proizvod na kojoj ce biti jos vise detalja
+- da bi se prikazala ova stranica sa detaljima treba da se salje request sa id proizvoda
