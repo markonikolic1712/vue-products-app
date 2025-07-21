@@ -1,10 +1,11 @@
 import { createStore } from 'vuex';
 import { getAllProducts, getProductById } from '@/api/service.js';
+import { reactive } from 'vue';
 
 export default createStore({
   state: {
     productList: [],
-    currentProduct: {},
+    currentProduct: reactive({}),
   },
   getters: {
     productList: (state) => state.productList,
@@ -24,10 +25,10 @@ export default createStore({
       ctx.commit('setProductList', data);
     },
 
-    async setCurrentProduct(ctx) {
-      const data = await getProductById();
-      console.log('data: ', data);
-      ctx.setCurrentProduct(data);
+    async setCurrentProduct(ctx, id) {
+      const data = await getProductById(id);
+      ctx.commit('setCurrentProduct', data);
+      return data;
     },
   },
   modules: {},

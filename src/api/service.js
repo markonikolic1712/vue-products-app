@@ -1,6 +1,7 @@
 import api from './axiosconfig.js';
 
 async function getAllProducts() {
+  console.log('poziv service.js => getAllProducts');
   const response = await api.GET('');
   const products = [];
   response.products.forEach((p) => {
@@ -12,7 +13,6 @@ async function getAllProducts() {
       availability: p.availabilityStatus,
     });
   });
-  console.log(products);
   return products;
 }
 
